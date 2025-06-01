@@ -1,0 +1,27 @@
+/* Styling for Certifications Cards */
+.certifications-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center the cards */
+}
+
+.certification-card {
+    background-color: #eeeeee; /* Off-white */
+    border: 1px solid #1a4f1a; /* Forest green border */
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px; /* Adjust width as needed, maybe slightly different from skills */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add some shadow */
+    transition: transform 0.3s ease-in-out; /* Add hover effect */
+}
+
+.certification-card:hover {
+    transform: translateY(-5px); /* Lift the card on hover */
+}
+
+.certification-card h3 {
+    margin-top: 0;
+    color: #1a4f1a; /* Forest green text */
+} 

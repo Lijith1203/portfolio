@@ -1,0 +1,60 @@
+/* Styling for content pages */
+.page-content {
+    padding: 50px 20px;
+    text-align: left;
+    max-width: 800px; /* Optional: Limit content width for better readability */
+    margin: 0 auto; /* Center the content block */
+    font-size: 12px; /* Decreased text size */
+    color: #1a4f1a; /* Forest green text for page content */
+}
+
+.page-content h1,
+.page-content p,
+.page-content ul {
+    margin-bottom: 20px;
+}
+
+.page-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.page-content li {
+    margin-bottom: 10px;
+}
+
+.page-content form .form-group {
+    margin-bottom: 20px;
+}
+
+.page-content form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #1a4f1a; /* Forest green label color */
+}
+
+.page-content form input[type="text"],
+.page-content form input[type="email"],
+.page-content form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #1a4f1a; /* Forest green border */
+    border-radius: 4px;
+    background-color: #eeeeee; /* Off-white for input background */
+    color: #1a4f1a; /* Forest green text */
+}
+
+.page-content form button[type="submit"] {
+    background-color: #1a4f1a; /* Forest green button color */
+    color: #eeeeee; /* Off-white text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add transition for hover */
+}
+
+.page-content form button[type="submit"]:hover {
+    background-color: #2d572d; /* Slightly lighter forest green on hover */
+} 

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Lijith Talluru - Web Developer. Contact for collaborations, job opportunities, or project inquiries.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-domain.com/contact">
+  <meta property="og:title" content="Contact - Lijith Talluru">
+  <meta property="og:description" content="Get in touch with Lijith Talluru - Web Developer. Contact for collaborations, job opportunities, or project inquiries.">
+  <meta property="og:image" content="https://your-domain.com/prof.webp">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://your-domain.com/contact">
+  <meta property="twitter:title" content="Contact - Lijith Talluru">
+  <meta property="twitter:description" content="Get in touch with Lijith Talluru - Web Developer. Contact for collaborations, job opportunities, or project inquiries.">
+  <meta property="twitter:image" content="https://your-domain.com/prof.webp">
+
+  <title>Contact - Lijith Talluru</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/616/616494.png" type="image/png">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+    })();
+  </script>
+</head>
+<body>
+  <div class="section full-height">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="contact-wrapper">
+            <div class="contact-header text-center">
+              <h1>Get in Touch</h1>
+            </div>
+            
+            <div class="contact-form-container">
+              <form id="contactForm" action="https://formsubmit.co/codingwithlijith@gmail.com" method="POST">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                  <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                  <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_next" value="contact.html?success=true">
+                <input type="hidden" name="_captcha" value="true">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="New Contact Form Submission">
+                <input type="hidden" name="_autoresponse" value="Thank you for your message. I will get back to you soon!">
+                <button type="submit" class="btn btn-submit">Send Message</button>
+              </form>
+            </div>
+
+            <!-- Success Message -->
+            <div id="successMessage" class="alert alert-success mt-3" style="display: none;">
+              <i class="fas fa-check-circle"></i>
+              Thank you for your message! I'll get back to you soon.
+            </div>
+
+            <div class="contact-info text-center">
+              <div class="contact-methods">
+                <a href="mailto:codingwithlijith@gmail.com" class="contact-method">
+                  <i class="fas fa-envelope"></i>
+                  <span>codingwithlijith@gmail.com</span>
+                </a>
+                <a href="tel:+917995327140" class="contact-method">
+                  <i class="fas fa-phone"></i>
+                  <span>+91 7995327140</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Return to Home Button -->
+  <div class="section padding-top-bottom over-hide background-dark z-bigger-2">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-7 text-center">
+          <a href="index.html" class="hover-target">
+            <div class="project-link-wrap">
+              <p>return to home</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll back to top -->
+  <div class="scroll-to-top hover-target"></div>
+
+  <!-- Page cursor -->
+  <div class='cursor' id="cursor"></div>
+  <div class='cursor2' id="cursor2"></div>
+  <div class='cursor3' id="cursor3"></div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src="./script.js"></script>
+  <script>
+    // Check for success parameter in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+      const successMessage = document.getElementById('successMessage');
+      successMessage.style.display = 'flex';
+      
+      // Remove the success parameter from URL
+      window.history.replaceState({}, document.title, window.location.pathname);
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        successMessage.style.display = 'none';
+      }, 5000);
+    }
+
+    // Simple form submission handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      const submitBtn = this.querySelector('.btn-submit');
+      submitBtn.innerHTML = 'Sending...';
+      submitBtn.disabled = true;
+    });
+  </script>
+
+  <style>
+    .form-control {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    .form-control:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
+
+    .btn-submit {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .btn-submit:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-submit:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    .alert {
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      animation: slideIn 0.3s ease-out;
+    }
+
+    .alert-success {
+      background-color: rgba(26, 79, 26, 0.1);
+      border: 1px solid rgba(26, 79, 26, 0.2);
+      color: #1a4f1a;
+    }
+
+    .alert i {
+      margin-right: 10px;
+      font-size: 20px;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <footer style="width:100%;text-align:center;padding:20px 0 10px 0;font-size:0.95rem;color:#888;background:none;">
+    © 2025 Lijith Talluru. All rights reserved.
+  </footer>
+</body>
+</html> 

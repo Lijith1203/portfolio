@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Lijith Talluru's portfolio of web development projects, including smart agriculture systems, hospital management, and innovative web applications.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-domain.com/projects">
+  <meta property="og:title" content="Projects - Lijith Talluru">
+  <meta property="og:description" content="Explore Lijith Talluru's portfolio of web development projects, including smart agriculture systems, hospital management, and innovative web applications.">
+  <meta property="og:image" content="https://your-domain.com/agr.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://your-domain.com/projects">
+  <meta property="twitter:title" content="Projects - Lijith Talluru">
+  <meta property="twitter:description" content="Explore Lijith Talluru's portfolio of web development projects, including smart agriculture systems, hospital management, and innovative web applications.">
+  <meta property="twitter:image" content="https://your-domain.com/agr.jpg">
+
+  <title>Projects - Lijith Talluru</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/616/616494.png" type="image/png">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      color: #1a4f1a;
+    }
+
+    .title-section {
+      padding: 120px 0 80px;
+      text-align: center;
+      background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+    }
+
+    .title-section h1 {
+      color: #1a4f1a;
+      font-family: 'Regalia Monarch', serif;
+      font-size: 4rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .title-section h1:after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: #1a4f1a;
+    }
+
+    .title-section p {
+      color: #1a4f1a;
+      font-size: 1.4rem;
+      margin-top: 30px;
+      opacity: 0.8;
+    }
+
+    .projects-section {
+      padding: 60px 0 100px;
+      background-color: #f8f9fa;
+    }
+
+    .project-category {
+      margin-bottom: 80px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .project-category:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .project-category:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    .project-category h2 {
+      color: #1a4f1a;
+      font-family: 'Regalia Monarch', serif;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      text-align: center;
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .project-category h2:after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #1a4f1a;
+      margin: 15px auto;
+      transition: width 0.3s ease;
+    }
+
+    .project-category:hover h2:after {
+      width: 100px;
+    }
+
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      padding: 20px;
+    }
+
+    .project-card {
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+      border: 1px solid rgba(26, 79, 26, 0.1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(26, 79, 26, 0.2);
+      border-color: rgba(26, 79, 26, 0.3);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .project-card:hover .project-image {
+      transform: scale(1.1);
+    }
+
+    .project-image:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(26, 79, 26, 0.1), rgba(26, 79, 26, 0.3));
+      transition: all 0.4s ease;
+    }
+
+    .project-card:hover .project-image:after {
+      background: linear-gradient(to bottom, rgba(26, 79, 26, 0.2), rgba(26, 79, 26, 0.4));
+    }
+
+    .project-content {
+      padding: 30px;
+      transform: translateY(0);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .project-card:hover .project-content {
+      transform: translateY(-5px);
+    }
+
+    .project-content h3 {
+      color: #1a4f1a;
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .project-content p {
+      color: #1a4f1a;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .project-tag {
+      background: rgba(26, 79, 26, 0.1);
+      color: #1a4f1a;
+      padding: 5px 12px;
+      border-radius: 15px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      transform: translateY(0);
+    }
+
+    .project-card:hover .project-tag {
+      background: rgba(26, 79, 26, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .project-link {
+      color: #1a4f1a;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      opacity: 0.8;
+    }
+
+    .project-card:hover .project-link {
+      color: #2d572d;
+      transform: translateX(5px);
+      opacity: 1;
+    }
+
+    .project-link i {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover .project-link i {
+      transform: translateX(3px);
+    }
+
+    .return-home {
+      background: linear-gradient(to top, #ffffff, #f8f9fa);
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .return-home .project-link-wrap p {
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    .return-home .project-link-wrap:hover p {
+      transform: translateY(-3px);
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .title-section {
+        padding: 80px 0 50px;
+      }
+
+      .title-section h1 {
+        font-size: 2.8rem;
+      }
+
+      .title-section p {
+        font-size: 1.2rem;
+      }
+
+      .projects-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .project-category h2 {
+        font-size: 2rem;
+      }
+
+      .project-content {
+        padding: 20px;
+      }
+    }
+
+    .btn-primary {
+      background-color: #1a4f1a;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #153d15;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(26, 79, 26, 0.2);
+    }
+
+    .btn-primary i {
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <!-- Title Section -->
+  <div class="title-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1>My Projects</h1>
+          <p>Here are some of my recent works</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects Section -->
+  <div class="projects-section">
+    <div class="container">
+      <!-- Web Development Projects -->
+      <div class="project-category">
+        <h2>Web Development</h2>
+        <div class="projects-container">
+          <div class="project-card">
+            <div class="project-image" style="background-image: url('hos.png')"></div>
+            <div class="project-content">
+              <h3>Hospital Management System</h3>
+              <p>A comprehensive web-based system for managing hospital operations, patient records, appointments, and medical staff. <span style="color: #2d572d; font-weight: 600;">(Upcoming Project)</span></p>
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JS</span>
+                <span class="project-tag">PHP</span>
+                <span class="project-tag">MySQL</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fas fa-file-alt"></i>
+                  Doc
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fas fa-code"></i>
+                  Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image" style="background-image: url('cyb.webp')"></div>
+            <div class="project-content">
+              <h3>Cyber Security Demo</h3>
+              <p>An interactive demonstration of various cybersecurity concepts, including encryption, authentication, and secure data handling. <span style="color: #2d572d; font-weight: 600;">(Upcoming Project)</span></p>
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JS</span>
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">Express</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fas fa-file-alt"></i>
+                  Doc
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fas fa-code"></i>
+                  Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image" style="background-image: url('maths.webp')"></div>
+            <div class="project-content">
+              <h3>Maths Helper</h3>
+              <p>An interactive web application that helps students solve mathematical problems and understand concepts through step-by-step solutions.</p>
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JS</span>
+                <span class="project-tag">Math.js</span>
+                <span class="project-tag">Bootstrap</span>
+              </div>
+              <div class="project-links">
+                <a href="https://codingwithlijith.blogspot.com/" class="project-link" target="_blank">
+                  <i class="fas fa-external-link-alt"></i>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IoT Projects -->
+      <div class="project-category">
+        <h2>IoT Projects</h2>
+        <div class="projects-container">
+          <div class="project-card">
+            <div class="project-image" style="background-image: url('agr2.jpg')"></div>
+            <div class="project-content">
+              <h3>Smart Agriculture Management System</h3>
+              <p>An automated farming system that monitors soil moisture, temperature, and humidity to optimize crop growth and irrigation schedules. Features include Blynk IoT integration for remote monitoring, LCD display for local readings, and automated water pump control based on soil moisture levels.</p>
+              <div class="project-tags">
+                <span class="project-tag">ESP8266</span>
+                <span class="project-tag">DHT11</span>
+                <span class="project-tag">Blynk IoT</span>
+                <span class="project-tag">LCD I2C</span>
+                <span class="project-tag">Relay</span>
+                <span class="project-tag">Soil Sensor</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fas fa-file-alt"></i>
+                  Doc
+                </a>
+                <a href="#" class="project-link" onclick="showAgricultureSourceCode()">
+                  <i class="fas fa-code"></i>
+                  View Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image" style="background-image: url('atm.webp')"></div>
+            <div class="project-content">
+              <h3>ESP32-Based ATM System</h3>
+              <p>A secure automated teller machine prototype using ESP32, featuring RFID authentication, keypad input, and LCD display for basic banking operations. The system includes Telegram bot integration for remote access and OTP-based authentication.</p>
+              <div class="project-tags">
+                <span class="project-tag">ESP32</span>
+                <span class="project-tag">RFID</span>
+                <span class="project-tag">Keypad</span>
+                <span class="project-tag">LCD</span>
+                <span class="project-tag">Security</span>
+                <span class="project-tag">Telegram Bot</span>
+                <span class="project-tag">WiFi</span>
+              </div>
+              <div class="project-links">
+                <a href="https://docs.google.com/document/d/1-2-3-4-5/edit" class="project-link" target="_blank">
+                  <i class="fas fa-file-alt"></i>
+                  Doc
+                </a>
+                <a href="#" class="project-link" onclick="showATMSourceCode()">
+                  <i class="fas fa-code"></i>
+                  View Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Documents -->
+      <div class="project-category">
+        <h2>Project Documents</h2>
+        <div class="projects-container">
+          <div class="project-card">
+            <div class="project-content">
+              <h3>Smart Agriculture System</h3>
+              <p>Documentation and technical details of the Smart Agriculture project, including system architecture, implementation details, and results.</p>
+              <div class="project-tags">
+                <span class="project-tag">Documentation</span>
+                <span class="project-tag">Technical</span>
+                <span class="project-tag">PDF</span>
+              </div>
+              <a href="smart agriculture.pdf" class="btn btn-primary" download>
+                <i class="fas fa-download"></i> Download PDF
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-content">
+              <h3>ESP32 Project Report</h3>
+              <p>Complete project report for the ESP32-based system, including circuit diagrams, code documentation, and testing results.</p>
+              <div class="project-tags">
+                <span class="project-tag">Report</span>
+                <span class="project-tag">ESP32</span>
+                <span class="project-tag">PDF</span>
+              </div>
+              <a href="ESP_32_FINAL_SUBMISS_Modified_with_Corrected_Page_Numbers[1].pdf" class="btn btn-primary" download>
+                <i class="fas fa-download"></i> Download PDF
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for ATM Source Code -->
+  <div id="atmCodeModal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); overflow-y: auto;">
+    <div class="modal-content" style="background-color: #f8f9fa; margin: 2% auto; padding: 20px; width: 90%; max-width: 1000px; border-radius: 10px; position: relative;">
+      <span class="close" onclick="closeATMModal()" style="position: absolute; right: 20px; top: 10px; font-size: 28px; cursor: pointer; color: #1a4f1a;">&times;</span>
+      <h3 style="color: #1a4f1a; margin-bottom: 20px;">ESP32 ATM System Source Code</h3>
+      <div style="max-height: 80vh; overflow-y: auto;">
+        <pre style="background-color: #2d2d2d; color: #f8f9fa; padding: 20px; border-radius: 5px; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New', Courier, monospace; font-size: 14px; line-height: 1.5;">
+#include &lt;WiFi.h&gt;
+#include &lt;UniversalTelegramBot.h&gt;
+#include &lt;ArduinoJson.h&gt;
+
+// WiFi credentials
+const char* ssid = "YOUR_WIFI_SSID";
+const char* password = "YOUR_WIFI_PASSWORD";
+
+// Telegram Bot Token
+const char* botToken = "YOUR_BOT_TOKEN";
+
+// Initialize WiFi client and Telegram bot
+WiFiClientSecure client;
+UniversalTelegramBot bot(botToken, client);
+
+// Variables for OTP
+String currentOTP = "";
+bool isAuthenticated = false;
+
+// Function to handle new messages
+void handleNewMessages(int numNewMessages) {
+    for (int i = 0; i < numNewMessages; i++) {
+        String chat_id = bot.messages[i].chat_id;
+        String text = bot.messages[i].text;
+
+        if (text == "/start") {
+            String welcome = "Welcome to ATM Bot!\n";
+            welcome += "Use /login to authenticate";
+            bot.sendMessage(chat_id, welcome, "");
+        }
+        else if (text == "/login") {
+            // Generate OTP
+            currentOTP = String(random(100000, 999999));
+            String message = "Your OTP is: " + currentOTP;
+            bot.sendMessage(chat_id, message, "");
+        }
+        else if (text == currentOTP) {
+            isAuthenticated = true;
+            bot.sendMessage(chat_id, "Authentication successful!", "");
+        }
+        else if (isAuthenticated) {
+            if (text == "/balance") {
+                bot.sendMessage(chat_id, "Your balance is: $1000", "");
+            }
+            else if (text == "/withdraw") {
+                bot.sendMessage(chat_id, "Enter amount to withdraw:", "");
+            }
+        }
+    }
+}
+
+void setup() {
+    Serial.begin(115200);
+    
+    // Connect to WiFi
+    WiFi.begin(ssid, password);
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
+    }
+    Serial.println("\nConnected to WiFi");
+    
+    // Set up secure connection
+    client.setCACert(TELEGRAM_CERTIFICATE_ROOT);
+}
+
+void loop() {
+    if (WiFi.status() == WL_CONNECTED) {
+        int numNewMessages = bot.getUpdates(bot.last_message_received + 1);
+        while (numNewMessages) {
+            handleNewMessages(numNewMessages);
+            numNewMessages = bot.getUpdates(bot.last_message_received + 1);
+        }
+    }
+    delay(1000);
+}</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Agriculture Source Code -->
+  <div id="agricultureCodeModal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); overflow-y: auto;">
+    <div class="modal-content" style="background-color: #f8f9fa; margin: 2% auto; padding: 20px; width: 90%; max-width: 1000px; border-radius: 10px; position: relative;">
+      <span class="close" onclick="closeAgricultureModal()" style="position: absolute; right: 20px; top: 10px; font-size: 28px; cursor: pointer; color: #1a4f1a;">&times;</span>
+      <h3 style="color: #1a4f1a; margin-bottom: 20px;">Smart Agriculture System Source Code</h3>
+      <div style="max-height: 80vh; overflow-y: auto;">
+        <pre style="background-color: #2d2d2d; color: #f8f9fa; padding: 20px; border-radius: 5px; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New', Courier, monospace; font-size: 14px; line-height: 1.5;">
+/* Fill-in information from Blynk Device Info here */
+#define BLYNK_TEMPLATE_ID "TMPL3-XsZYd5y"
+#define BLYNK_TEMPLATE_NAME "plant watering system"
+#define BLYNK_AUTH_TOKEN "px_vhWl2XvBMWT2HWRQ7h8L11Dmuw8pt"
+
+/* Comment this out to disable prints and save space */
+#define BLYNK_PRINT Serial
+#define relay 14
+
+#include &lt;ESP8266WiFi.h&gt;
+#include &lt;BlynkSimpleEsp8266.h&gt;
+#include "Wire.h"
+#include &lt;Adafruit_Sensor.h&gt;
+#include &lt;DHT.h&gt;
+#include &lt;LiquidCrystal_I2C.h&gt;
+
+// set the LCD number of columns and rows
+int lcdColumns = 16;
+int lcdRows = 2;
+
+// set LCD address, number of columns and rows
+LiquidCrystal_I2C lcd(0x27, lcdColumns, lcdRows);
+
+#define DHTPIN 13  // Digital pin connected to the DHT sensor
+#define DHTTYPE DHT11  // DHT 11
+
+DHT dht(DHTPIN, DHTTYPE);
+
+// current temperature & humidity, updated in loop()
+float t = 0.0;
+float h = 0.0;
+
+// Your WiFi credentials
+char ssid[] = "Srikanth";
+char pass[] = "Srikanth";
+
+BlynkTimer timer;
+
+void myTimerEvent() {
+  Serial.println("sending data ");
+  // Please don't send more that 10 values per second.
+  int raw_water_level = analogRead(A0);
+  int map_water_level = map(raw_water_level, 499, 680, 100, 0);
+
+  float newT = dht.readTemperature();
+  delay(50);
+  float newH = dht.readHumidity();
+
+  Serial.print("temp:");
+  Serial.println(newT);
+  Serial.println("Humid:");
+  Serial.println(newH);
+
+  Blynk.virtualWrite(V2, newT);
+  Blynk.virtualWrite(V3, newH);
+  Blynk.virtualWrite(V0, map_water_level);
+
+  if (map_water_level < 30) {
+    digitalWrite(relay, LOW);
+    Blynk.virtualWrite(V3, 1);
+  } else {
+    digitalWrite(relay, HIGH);
+    Blynk.virtualWrite(V3, 0);
+  }
+
+  lcd.setCursor(0, 0);
+  lcd.print("H:");
+  lcd.print(newH);
+  lcd.setCursor(0, 1);
+  lcd.print("T:");
+  lcd.print(newT);
+  lcd.print(" C");
+  delay(200);
+  lcd.clear();
+}
+
+BLYNK_WRITE(V1) {
+  int value = param.asInt();
+  if (value == 1) {
+    digitalWrite(relay, LOW);
+    delay(2000);
+  } else {
+    digitalWrite(relay, HIGH);
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(relay, OUTPUT);
+  digitalWrite(relay, HIGH);
+  dht.begin();
+  lcd.begin();
+  lcd.backlight();
+
+  Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
+
+  timer.setInterval(1000L, myTimerEvent);
+}
+
+void loop() {
+  Blynk.run();
+  timer.run();  // Initiates BlynkTimer
+}</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Return to Home Button -->
+  <div class="return-home">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-7 text-center">
+          <a href="index.html" class="hover-target">
+            <div class="project-link-wrap">
+              <p>return to home</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll back to top -->
+  <div class="scroll-to-top hover-target"></div>
+
+  <!-- Page cursor -->
+  <div class='cursor' id="cursor"></div>
+  <div class='cursor2' id="cursor2"></div>
+  <div class='cursor3' id="cursor3"></div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src="./script.js"></script>
+  <script>
+    // Animate project cards on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    });
+
+    document.querySelectorAll('.project-category').forEach(category => {
+      observer.observe(category);
+    });
+
+    // Modal functions for ATM code
+    function showATMSourceCode() {
+      document.getElementById('atmCodeModal').style.display = 'block';
+    }
+
+    function closeATMModal() {
+      document.getElementById('atmCodeModal').style.display = 'none';
+    }
+
+    // Modal functions for Agriculture code
+    function showAgricultureSourceCode() {
+      document.getElementById('agricultureCodeModal').style.display = 'block';
+    }
+
+    function closeAgricultureModal() {
+      document.getElementById('agricultureCodeModal').style.display = 'none';
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      var atmModal = document.getElementById('atmCodeModal');
+      var agriModal = document.getElementById('agricultureCodeModal');
+      if (event.target == atmModal) {
+        atmModal.style.display = 'none';
+      }
+      if (event.target == agriModal) {
+        agriModal.style.display = 'none';
+      }
+    }
+  </script>
+  <footer style="width:100%;text-align:center;padding:20px 0 10px 0;font-size:0.95rem;color:#888;background:none;">
+    © 2025 Lijith Talluru. All rights reserved.
+  </footer>
+</body>
+</html> 

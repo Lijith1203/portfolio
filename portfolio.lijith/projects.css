@@ -1,0 +1,39 @@
+/* Styling for Projects Cards */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center the cards */
+}
+
+.project-card {
+    background-color: #eeeeee; /* Off-white */
+    border: 1px solid #1a4f1a; /* Forest green border */
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px; /* Adjust width as needed for project content */
+    text-align: left; /* Align project text left */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Keep dark shadow */
+    transition: transform 0.3s ease-in-out; /* Add hover effect */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Lift the card on hover */
+}
+
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px; /* Space between title and description */
+    color: #1a4f1a; /* Forest green text */
+}
+
+.project-card p {
+    margin-bottom: 0; /* No bottom margin for the last paragraph */
+    color: #1a4f1a; /* Forest green text */
+}
+
+/* Styling for Card Details on Hover */
+.project-card:hover .card-details {
+    max-height: 300px; /* Adjust based on expected content height */
+    opacity: 1;
+} 

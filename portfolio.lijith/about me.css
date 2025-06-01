@@ -1,0 +1,222 @@
+/* Styling for Floating Title Card */
+.floating-title-card {
+    display: inline-block; /* Allows the card to wrap content */
+    background-color: rgba(238, 238, 238, 0.7); /* Semi-transparent off-white */
+    border: 1px solid rgba(26, 79, 26, 0.4); /* Semi-transparent forest green border */
+    border-radius: 10px;
+    padding: 10px 20px; /* Padding around the text */
+    margin-top: 20px; /* Space below the name */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Keep dark shadow */
+    backdrop-filter: blur(5px); /* Subtle blur */
+    -webkit-backdrop-filter: blur(5px); /* Safari support */
+    animation: floatEffect 3s ease-in-out infinite;
+    color: #1a4f1a; /* Forest green text */
+    font-size: 1.5em; /* Adjust font size as needed */
+    font-weight: bold;
+    overflow: hidden; /* Hide the blinking cursor part initially */
+    white-space: nowrap; /* Keep text on a single line */
+    border-right: .15em solid #1a4f1a; /* Forest green typing cursor */
+}
+
+/* Keyframes for floating animation */
+@keyframes floatEffect {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Styling for typing text cursor effect */
+#typing-text {
+    display: inline-block; /* Needed for cursor */
+    vertical-align: middle;
+}
+
+/* Layout for name and photo placeholder */
+.name-and-photo {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* Horizontally center the block */
+    gap: 20px; /* Space between name and photo */
+}
+
+.profile-image-placeholder {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    background-color: #eeeeee; /* Off-white background for placeholder */
+    border-radius: 50%; /* Make it circular */
+    border: 5px solid #1a4f1a; /* Forest green border */
+    background-image: url('prof.webp'); /* Set the background image */
+    background-size: cover; /* Ensure the image covers the circle */
+    background-position: center center; /* Center the image */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for hover */
+    /* You can add a placeholder image or icon here later */
+}
+
+.profile-image-placeholder:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Add a subtle shadow on hover */
+}
+
+/* Specific styling for About Me page content */
+.page-content {
+    background-color: #eeeeee; /* Off-white background */
+    color: #1a4f1a; /* Forest green text */
+    text-align: center;
+}
+
+/* Add padding to the first section after the fixed header */
+.section.full-height {
+    padding-top: 200px;
+    background-color: #eeeeee; /* Off-white background */
+    color: #1a4f1a; /* Forest green text */
+}
+
+.accordion-item, .accordion-header, .accordion-content {
+    background-color: #eeeeee; /* Ensure accordion backgrounds are off-white */
+    color: #1a4f1a; /* Ensure accordion text is forest green */
+}
+
+.accordion-header::after {
+    color: #1a4f1a; /* Ensure accordion arrow is forest green */
+}
+
+/* Timeline Styling */
+.timeline {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #1a4f1a; /* Forest green line */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 0;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+
+.timeline-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fade-in 0.6s ease-out forwards; /* Apply animation when visible */
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -14px;
+    background-color: #1a4f1a; /* Forest green marker */
+    border: 4px solid #eeeeee; /* Off-white border */
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -11px;
+}
+
+.timeline-date {
+    padding: 10px 15px;
+    position: absolute;
+    top: 6px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: #1a4f1a; /* Forest green text */
+    background-color: #eeeeee; /* Off-white background */
+    border-radius: 5px;
+}
+
+.timeline-item:nth-child(odd) .timeline-date {
+    right: calc(100% + 25px);
+}
+
+.timeline-item:nth-child(even) .timeline-date {
+    left: calc(100% + 25px);
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: #eeeeee; /* Off-white background */
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: #1a4f1a; /* Forest green text */
+}
+
+/* Fade-in animation for timeline items */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Optional: slide up slightly */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Optional: slide up slightly */
+    }
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 25px;
+    }
+
+    .timeline-item::after {
+        left: 18px;
+    }
+
+    .timeline-item:nth-child(even)::after {
+        left: 18px;
+    }
+
+    .timeline-date {
+        position: relative;
+        width: auto;
+        text-align: left;
+        padding: 5px 15px;
+        margin-bottom: 10px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-date,
+    .timeline-item:nth-child(even) .timeline-date {
+        right: auto;
+        left: 0;
+    }
+
+    .timeline-content {
+        padding: 15px;
+    }
+} 
